@@ -1,4 +1,4 @@
-package ir.omidrezabagherian.netflix.models
+package ir.omidrezabagherian.netflix.model
 
 import android.graphics.Bitmap
 import androidx.fragment.app.Fragment

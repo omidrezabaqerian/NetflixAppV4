@@ -1,4 +1,4 @@
-package ir.omidrezabagherian.testapplicationfour
+package ir.omidrezabagherian.netflix.data.network
 
 import okhttp3.MultipartBody
 import okhttp3.ResponseBody
@@ -9,9 +9,7 @@ interface ImageService {
     @Multipart
     @POST("http://51.195.19.222/users/omidrezabagherian")
     fun uploadImage(
-        @Part photo: MultipartBody.Part,
-        @Part("gender") gender: String,
-        @Part("price") price: String
+        @Part photo: MultipartBody.Part
     ): Call<String>
 
     @GET("http://51.195.19.222/uploads/{image}")

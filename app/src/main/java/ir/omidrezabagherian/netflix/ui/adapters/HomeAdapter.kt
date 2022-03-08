@@ -1,4 +1,4 @@
-package ir.omidrezabagherian.netflix.models
+package ir.omidrezabagherian.netflix.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ir.omidrezabagherian.netflix.fragments.HomeFragment
 import ir.omidrezabagherian.netflix.R
+import ir.omidrezabagherian.netflix.model.Favorite
+import ir.omidrezabagherian.netflix.model.Video
+import ir.omidrezabagherian.netflix.model.VideoHandler
+import ir.omidrezabagherian.netflix.ui.home.HomeFragment
 
 class HomeAdapter(videos: MutableList<Video>, var fragment: HomeFragment) :
     RecyclerView.Adapter<HomeAdapter.FavoriteHandler>() {

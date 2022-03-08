@@ -1,4 +1,4 @@
-package ir.omidrezabagherian.testapplicationfour
+package ir.omidrezabagherian.netflix.data.network
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

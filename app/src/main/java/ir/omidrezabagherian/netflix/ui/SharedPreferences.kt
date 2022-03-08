@@ -1,4 +1,4 @@
-package ir.omidrezabagherian.netflix.fragments
+package ir.omidrezabagherian.netflix.ui
 
 object SharedPreferences {
     const val FILE_NAME = "Login"

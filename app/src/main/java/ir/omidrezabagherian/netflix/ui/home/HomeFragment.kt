@@ -1,4 +1,4 @@
-package ir.omidrezabagherian.netflix.fragments
+package ir.omidrezabagherian.netflix.ui.home
 
 import android.content.Context
 import android.graphics.drawable.BitmapDrawable
@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import ir.omidrezabagherian.netflix.R
 import ir.omidrezabagherian.netflix.databinding.FragmentHomeBinding
-import ir.omidrezabagherian.netflix.models.Favorite
-import ir.omidrezabagherian.netflix.models.HomeAdapter
-import ir.omidrezabagherian.netflix.models.VideoHandler
+import ir.omidrezabagherian.netflix.model.Favorite
+import ir.omidrezabagherian.netflix.ui.adapters.HomeAdapter
+import ir.omidrezabagherian.netflix.model.VideoHandler
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 

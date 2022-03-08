@@ -1,4 +1,4 @@
-package ir.omidrezabagherian.netflix.models
+package ir.omidrezabagherian.netflix.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ir.omidrezabagherian.netflix.R
+import ir.omidrezabagherian.netflix.model.Video
 
 class FavoriteAdapter(videos: MutableList<Video>) :
     RecyclerView.Adapter<FavoriteAdapter.FavoriteHandler>() {

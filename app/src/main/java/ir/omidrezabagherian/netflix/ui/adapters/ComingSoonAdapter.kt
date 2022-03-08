@@ -1,7 +1,5 @@
-package ir.omidrezabagherian.netflix.models
+package ir.omidrezabagherian.netflix.ui.adapters
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ir.omidrezabagherian.netflix.R
+import ir.omidrezabagherian.netflix.model.ComingSoonVideo
 
 class ComingSoonAdapter(
     private val fragment: Fragment

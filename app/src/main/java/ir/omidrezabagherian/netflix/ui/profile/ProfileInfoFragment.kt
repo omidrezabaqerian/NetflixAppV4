@@ -1,26 +1,24 @@
-package ir.omidrezabagherian.netflix.fragments
+package ir.omidrezabagherian.netflix.ui.profile
 
 import android.content.Context
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import ir.omidrezabagherian.netflix.R
 import ir.omidrezabagherian.netflix.databinding.FragmentProfileInfoBinding
-import ir.omidrezabagherian.testapplicationfour.NetworkManager
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import ir.omidrezabagherian.netflix.ui.SharedPreferences
 
 
 class ProfileInfoFragment : Fragment(R.layout.fragment_profile_info) {
 
     private lateinit var profileInfoBinding: FragmentProfileInfoBinding
     private lateinit var profileInfoNavController: NavController
+    private val infoViewModel: InfoViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,42 +34,25 @@ class ProfileInfoFragment : Fragment(R.layout.fragment_profile_info) {
         profileInfoNavController = profileInfoNavHostFragment.navController
 
         val picture =
-            sharedPref?.getString(SharedPreferences.PICTURE_KEY, R.drawable.ic_baseline_person_24.toString()).toString()
+            sharedPref?.getString(
+                SharedPreferences.PICTURE_KEY,
+                R.drawable.ic_baseline_person_24.toString()
+            ).toString()
         val fullName =
             sharedPref?.getString(SharedPreferences.FULLNAME_KEY, "No FullName").toString()
         val email = sharedPref?.getString(SharedPreferences.EMAIL_KEY, "No Email").toString()
         val userName =
             sharedPref?.getString(SharedPreferences.USERNAME_KEY, "No UserName").toString()
 
-        NetworkManager.service.downloadImage(picture).enqueue(
-            object : Callback<ResponseBody> {
-                override fun onResponse(
-                    call: Call<ResponseBody>,
-                    response: Response<ResponseBody>
-                ) {
-                    if (response.body()!=null){
-                        val stream = response.body()!!.byteStream()
-                        stream.let {
-                            val bitmap = BitmapFactory.decodeStream(stream)
-                            profileInfoBinding.imageviewUser.setImageBitmap(bitmap)
-                        }
-                    }else{
-                        profileInfoBinding.imageviewUser.setImageResource(R.drawable.ic_baseline_person_24)
-                    }
-                }
+        infoViewModel.showInfo(requireContext(), picture)
 
-                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                    Log.i("Throwable",t.toString())
-                }
+        infoViewModel.infoResponse.observe(viewLifecycleOwner, Observer { image ->
+            profileInfoBinding.imageviewUser.setImageBitmap(image)
+        })
 
-            }
-        )
-
-        /*val url = "http://51.195.19.222/uploads/${args.imageFileName}"
-        Glide.with(this)
-            .load(url)
-            .centerCrop()
-            .into(profileInfoBinding.imageviewUser)*/
+        infoViewModel.infoError.observe(viewLifecycleOwner, Observer {
+            Log.i("Error", it)
+        })
 
         profileInfoBinding.fullName = fullName
         profileInfoBinding.email = email

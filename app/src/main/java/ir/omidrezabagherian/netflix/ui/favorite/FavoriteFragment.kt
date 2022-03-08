@@ -1,13 +1,13 @@
-package ir.omidrezabagherian.netflix.fragments
+package ir.omidrezabagherian.netflix.ui.favorite
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import ir.omidrezabagherian.netflix.models.FavoriteAdapter
-import ir.omidrezabagherian.netflix.models.VideoHandler
 import ir.omidrezabagherian.netflix.R
 import ir.omidrezabagherian.netflix.databinding.FragmentFavoriteBinding
+import ir.omidrezabagherian.netflix.ui.adapters.FavoriteAdapter
+import ir.omidrezabagherian.netflix.model.VideoHandler
 
 class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
 

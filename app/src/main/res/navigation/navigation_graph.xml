@@ -6,19 +6,19 @@
 
     <fragment
         android:id="@+id/comingSoonFragment"
-        android:name="ir.omidrezabagherian.netflix.fragments.ComingSoonFragment"
+        android:name="ir.omidrezabagherian.netflix.ui.comingsoon.ComingSoonFragment"
         android:label="ComingSoonFragment" />
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="ir.omidrezabagherian.netflix.fragments.FavoriteFragment"
+        android:name="ir.omidrezabagherian.netflix.ui.favorite.FavoriteFragment"
         android:label="FavoriteFragment" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="ir.omidrezabagherian.netflix.fragments.HomeFragment"
+        android:name="ir.omidrezabagherian.netflix.ui.home.HomeFragment"
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/profileInfoFragment"
-        android:name="ir.omidrezabagherian.netflix.fragments.ProfileInfoFragment"
+        android:name="ir.omidrezabagherian.netflix.ui.profile.ProfileInfoFragment"
         android:label="ProfileInfoFragment" >
         <argument
             android:name="ImageFileName"
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileLoginFragment"
-        android:name="ir.omidrezabagherian.netflix.fragments.ProfileLoginFragment"
+        android:name="ir.omidrezabagherian.netflix.ui.profile.ProfileLoginFragment"
         android:label="ProfileLoginFragment" >
         <action
             android:id="@+id/action_profileLoginFragment_to_profileInfoFragment"

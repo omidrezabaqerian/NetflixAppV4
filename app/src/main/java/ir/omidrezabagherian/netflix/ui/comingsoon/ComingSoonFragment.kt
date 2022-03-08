@@ -1,4 +1,4 @@
-package ir.omidrezabagherian.netflix.fragments
+package ir.omidrezabagherian.netflix.ui.comingsoon
 
 import android.content.Context
 import android.graphics.drawable.BitmapDrawable
@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import ir.omidrezabagherian.netflix.R
 import ir.omidrezabagherian.netflix.databinding.FragmentComingSoonBinding
-import ir.omidrezabagherian.netflix.models.ComingSoonAdapter
-import ir.omidrezabagherian.netflix.models.ComingSoonVideo
+import ir.omidrezabagherian.netflix.ui.adapters.ComingSoonAdapter
+import ir.omidrezabagherian.netflix.model.ComingSoonVideo
 
 class ComingSoonFragment : Fragment(R.layout.fragment_coming_soon) {
 
